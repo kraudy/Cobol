@@ -23,3 +23,8 @@ Paritioned datasets are like libraries with members that have registers
 
 So, a dataset is like an object
 
+**JCL** (Job control language) is similar to IBM I **CL** (Control language) in the sense that they are OS specific instrucitons, similar to linux bash commands.
+
+JCL is similar to a CL, where you set up the environmente (files, libraries, overs, etc) before executing a program or just to make the OS do some operations
+
+*job entry subsystem* (JES) may be similar to ibm i Sub systems. When the JCL is submited, it creates a new job (which makes sense) and it is also send to the JES Sub system queue, where it is executed, which also makes sense.
