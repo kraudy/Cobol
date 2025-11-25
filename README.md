@@ -28,3 +28,8 @@ So, a dataset is like an object
 JCL is similar to a CL, where you set up the environmente (files, libraries, overs, etc) before executing a program or just to make the OS do some operations
 
 *job entry subsystem* (JES) may be similar to ibm i Sub systems. When the JCL is submited, it creates a new job (which makes sense) and it is also send to the JES Sub system queue, where it is executed, which also makes sense.
+
+SYSIN an input file (DD) statement for control commands
+SYSPRINT an output DD statement for the program to report success, failure, progress
+SYSUT1 a “source” DD statement where data is to be copied from
+SYSUT2 a “target” DD statement where the data from SYSUT1 is to be copied to
