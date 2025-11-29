@@ -41,4 +41,15 @@ This **JCL** thing is nasty stuff.
 //            DCB=(DSORG=PS,RECFM=FB,LRECL=80)
 ```
 
+A standard **DISP** parameter has three parts. The first parameter is the status, which can be any of the following:
+Parameter Meaning
+ - **NEW** Create a new data set
+ - **SHR** Re-use an existing data set, and let other people use it if they’d like
+ - **OLD** Re-use an existing data set, but don’t let others use it while we’re using it
+ - **MOD** For sequential data sets only. Re-use an existing data set, but only append new records to the bottom of it. If no data set exists, create a new one.
 
+Field 2 of the DISP parameter describes what should happen to the dataset in the case of a normal jobstep completion, and the third
+field is what should happen to the dataset in the case of a jobstep failure.
+  - **DELETE** Erase it from storage completely
+  - **CATLG** Record the data set so you can use it after the job finishes
+  - **PASS** After this step completes, hold on to it so jobsteps that come after this (in the same job) can use it
