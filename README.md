@@ -29,7 +29,16 @@ JCL is similar to a CL, where you set up the environmente (files, libraries, ove
 
 *job entry subsystem* (JES) may be similar to ibm i Sub systems. When the JCL is submited, it creates a new job (which makes sense) and it is also send to the JES Sub system queue, where it is executed, which also makes sense.
 
-SYSIN an input file (DD) statement for control commands
-SYSPRINT an output DD statement for the program to report success, failure, progress
-SYSUT1 a “source” DD statement where data is to be copied from
-SYSUT2 a “target” DD statement where the data from SYSUT1 is to be copied to
+  - **SYSIN** an input file (DD) statement for control commands
+  - **SYSPRINT** an output DD statement for the program to report success, failure, progress
+  - **SYSUT1** a “source” DD statement where data is to be copied from
+  - **SYSUT2** a “target” DD statement where the data from SYSUT1 is to be copied to
+
+This **JCL** thing is nasty stuff.
+```bash
+//SYSUT2   DD DSN=&SYSUID..JCL3OUT,DISP=(MOD,PASS,DELETE),
+//            SPACE=(TRK,(1,1)),UNIT=SYSDA,
+//            DCB=(DSORG=PS,RECFM=FB,LRECL=80)
+```
+
+
